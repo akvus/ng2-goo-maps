@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": false, // make true and fix errors
+        "module": "commonjs",
+        "target": "ES5",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "declaration": true
+    },
+    "files": [
+        "ng2-goo-maps.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
