@@ -1,3 +1,9 @@
+ng2-goo-maps
+
+Install:
+npm install ng2-goo-maps --save
+
+
 Google maps API:
 
 <goo-map [height]="300" [options]="{

@@ -8,9 +8,7 @@ const GOO_MAPS_ID = {
 @Component({
   moduleId: module.id,
   selector: 'goo-map',
-  templateUrl: 'goo-map.component.html',
-  styleUrls: ['goo-map.component.css'],
-  providers: []
+  templateUrl: 'goo-map.component.html'
 })
 export class GooMap implements OnInit, OnChanges {
 

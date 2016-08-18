@@ -1,7 +1,7 @@
 import { Directive, OnInit, Input, ContentChild, OnChanges, SimpleChange, Output, EventEmitter } from '@angular/core';
 import {GooMapsApiService} from '../service/goo-maps-api.service';
 import {LatLng} from '../interface/definitions';
-import {GooInfoWindow} from '../goo-info-window';
+import {GooInfoWindow} from '../goo-info-window/goo-info-window.component';
 
 @Directive({
   selector: 'goo-marker'
