@@ -1,10 +1,10 @@
 {
   "name": "ng2-goo-maps",
-  "version": "0.0.8",
+  "version": "0.0.11",
   "description": "Google Maps directives for Angular2",
   "main": "index.js",
   "scripts": {
-    "prepublish": "tsc",
+    "prepublish": "tsc && node make.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,12 +28,13 @@
     "@angular/http": "^2.0.0-rc.5"
   },
   "devDependencies": {
-    "@angular/platform-browser": "^2.0.0-rc.5",
     "@angular/common": "^2.0.0-rc.5",
     "@angular/compiler": "^2.0.0-rc.5",
-    "typescript": "^1.8.10",
+    "@angular/platform-browser": "^2.0.0-rc.5",
     "es6-shim": "^0.35.1",
     "rxjs": "^5.0.0-beta.6",
+    "systemjs-builder": "^0.15.26",
+    "typescript": "^1.8.10",
     "zone.js": "^0.6.14"
   },
   "typings": "./ng2-goo-maps.d.ts"

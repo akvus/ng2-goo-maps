@@ -3,7 +3,7 @@ import {GooMapsApiService} from '../service/goo-maps-api.service';
 
 @Component({
   selector: 'goo-info-window',
-  templateUrl: 'goo-info-window.component.html'
+  template: '<div class="goo-info-window-content"><ng-content></ng-content></div>'
 })
 export class GooInfoWindow implements OnInit, OnChanges {
 

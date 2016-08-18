@@ -7,7 +7,7 @@ const GOO_MAPS_ID = {
 
 @Component({
   selector: 'goo-map',
-  templateUrl: 'goo-map.component.html'
+  template: '<div id="{{mapId}}" [style.height]="mapHeight + \'px\'"></div><div id="map-content"><ng-content></ng-content></div>'
 })
 export class GooMap implements OnInit, OnChanges {
 
