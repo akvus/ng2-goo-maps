@@ -6,7 +6,6 @@ const GOO_MAPS_ID = {
 };
 
 @Component({
-  moduleId: module.id,
   selector: 'goo-map',
   templateUrl: 'goo-map.component.html'
 })

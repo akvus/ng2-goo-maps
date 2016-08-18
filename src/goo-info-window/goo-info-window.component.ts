@@ -2,7 +2,6 @@ import { Component, OnInit, ElementRef, Input, OnChanges, SimpleChange } from '@
 import {GooMapsApiService} from '../service/goo-maps-api.service';
 
 @Component({
-  moduleId: module.id,
   selector: 'goo-info-window',
   templateUrl: 'goo-info-window.component.html'
 })
