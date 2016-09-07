@@ -1,6 +1,6 @@
 # ng2-goo-maps
 
-Google Maps API directives for Angular2/RC-5.
+Google Maps API directives for Angular2.
 
 ## Installation
 ```sh
@@ -44,3 +44,6 @@ zoom: 3 }">
     { lat: -27.467, lng: 153.027 }]" [editable]="true"></goo-polyline>
 </goo-map>
 ```
+### Webpack example app
+
+https://github.com/akvus/ng2-goo-maps/tree/master/example
