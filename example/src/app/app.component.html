@@ -1,33 +1,6 @@
-# ng2-goo-maps
-
-Google Maps API directives for Angular2/RC-5.
-
-## Installation
-```sh
-npm install ng2-goo-maps --save
-```
-
-## Usage
-
-#### 1. In your module:
-```ts
-import {GooMapsModule} from 'ng2-goo-maps/ng2-goo-maps';
-
-@NgModule({
-    imports: [GooMapsModule]
-)]
-```
-#### 2. In your componenet:
-```ts
-import {GooMapsApiService} from 'ng2-goo-maps/ng2-goo-maps';
-@Component({
-  providers: [GooMapsApiService]
-})
-```
-
-#### 3. In your template:
-
-```html
+<main>
+  <h1>Hello from Angular 2 App with Webpack</h1>
+</main>
 <goo-map [height]="300" [options]="{
 center: { lat: -25.363, lng: 131.044 },
 zoom: 3 }">
@@ -43,4 +16,3 @@ zoom: 3 }">
     { lat: -18.142, lng: 178.431 },
     { lat: -27.467, lng: 153.027 }]" [editable]="true"></goo-polyline>
 </goo-map>
-```
