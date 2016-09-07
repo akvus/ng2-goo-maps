@@ -6,7 +6,7 @@ export class GooMapsApiService {
   private zeroLatLng = { lat: 0, lng: 0 };
   private zeroZoom = 4;
   private promiseMap: Promise<any>;
-  private _promiseMapResolver;
+  private _promiseMapResolver: any;
 
   constructor(
     private googleMapsApi: GoogleMapsLoader) {
@@ -15,7 +15,7 @@ export class GooMapsApiService {
     });
   }
 
-  init(mapId, mapOptions) {
+  init(mapId: any, mapOptions: any) {
     this.googleMapsApi.initMap().then(() => {
       // possibility that DOM element won't exist yet...?
       let map = new google.maps.Map(document.getElementById(mapId), { // would be good to get DOM Element already
@@ -33,14 +33,14 @@ export class GooMapsApiService {
     });
   }
 
-  fitMapBounds(bounds) {
+  fitMapBounds(bounds: any) {
     if (!bounds) { return; }
     this.getMap().then((map) => {
       map.fitBounds(bounds);
     });
   }
 
-  setCenter(latLng) {
+  setCenter(latLng: any) {
     this.getMap().then((map) => {
       map.setCenter(latLng);
     });
@@ -50,7 +50,7 @@ export class GooMapsApiService {
     return this.promiseMap;
   }
 
-  public buildMarker(options): Promise<google.maps.Marker> {
+  public buildMarker(options: any): Promise<google.maps.Marker> {
     return new Promise((resolve) => {
       this.promiseMap.then((map) => {
         let marker = new google.maps.Marker({
@@ -64,7 +64,7 @@ export class GooMapsApiService {
     });
   }
 
-  public buildPolyline(options): Promise<google.maps.Polyline> {
+  public buildPolyline(options: any): Promise<google.maps.Polyline> {
     return new Promise((resolve) => {
       this.promiseMap.then((map) => {
         let polyline = new google.maps.Polyline({
@@ -80,7 +80,7 @@ export class GooMapsApiService {
     });
   }
 
-  public buildRectangle(options): Promise<google.maps.Rectangle> {
+  public buildRectangle(options: any): Promise<google.maps.Rectangle> {
     return new Promise((resolve) => {
       this.promiseMap.then((map) => {
         let rectangle = new google.maps.Rectangle({
@@ -96,7 +96,7 @@ export class GooMapsApiService {
     });
   }
 
-  public buildInfoWindow(options?): Promise<google.maps.InfoWindow> {
+  public buildInfoWindow(options?: any): Promise<google.maps.InfoWindow> {
     return new Promise((resolve) => {
       this.promiseMap.then((map) => {
         if (!options) {

@@ -10,9 +10,8 @@ export class GooInfoWindow implements OnInit, OnChanges {
   @Input() isOpen: boolean = false;
 
   private promiseInfoWindow: Promise<any>;
-  private marker;
-
-  private content;
+  private marker: any;
+  private content: any;
 
   constructor(private gooMapsApi: GooMapsApiService,
     private elementRef: ElementRef) {
@@ -38,7 +37,7 @@ export class GooInfoWindow implements OnInit, OnChanges {
     });
   }
 
-  setMarker(marker) {
+  setMarker(marker: any) {
     this.marker = marker;
   }
 

@@ -12,11 +12,11 @@ const GOO_MAPS_ID = {
 export class GooMap implements OnInit, OnChanges {
 
   @Input('height') mapHeight: number;
-  @Input('options') options;
+  @Input('options') options: any;
 
   @Input('mapId') mapId: string = 'map_' + GOO_MAPS_ID.currentId++;
-  @Input('bounds') bounds;
-  @Input('center') center;
+  @Input('bounds') bounds: any;
+  @Input('center') center: any;
 
   constructor(
     private gooMapsApi: GooMapsApiService) {

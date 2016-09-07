@@ -21,7 +21,7 @@ export class GooPolyline implements OnInit, OnChanges {
       this.gooMapsApi.buildPolyline({
 
       }).then((polyline) => {
-        google.maps.event.addListener(polyline, 'rightclick', function (e) {
+        google.maps.event.addListener(polyline, 'rightclick', function (e: any) {
           if (e.vertex === undefined) {
             return;
           }
@@ -58,7 +58,7 @@ export class GooPolyline implements OnInit, OnChanges {
     });
   }
 
-  onChangePath(event) {
+  onChangePath(event: any) {
     this.path = event;
     this.pathChange.emit(event);
   }
@@ -102,7 +102,7 @@ export class GooPolyline implements OnInit, OnChanges {
 
       // mousedown anywhere on the map except on the menu div will close the
       // menu.
-      this.divListener_ = google.maps.event.addDomListener(map.getDiv(), 'mousedown', function (e) {
+      this.divListener_ = google.maps.event.addDomListener(map.getDiv(), 'mousedown', function (e: any) {
         if (e.target !== deleteMenu.div_) {
           deleteMenu.close();
         }
@@ -139,7 +139,7 @@ export class GooPolyline implements OnInit, OnChanges {
     /**
      * Opens the menu at a vertex of a given path.
      */
-    DeleteMenu.prototype.open = function (map, path, vertex) {
+    DeleteMenu.prototype.open = function (map: any, path: any, vertex: any) {
       this.set('position', path.getAt(vertex));
       this.set('path', path);
       this.set('vertex', vertex);
@@ -147,9 +147,6 @@ export class GooPolyline implements OnInit, OnChanges {
       this.draw();
     };
 
-    /**
-     * Deletes the vertex from the path.
-     */
     DeleteMenu.prototype.removeVertex = function () {
       let path = this.get('path');
       let vertex = this.get('vertex');

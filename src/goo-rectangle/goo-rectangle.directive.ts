@@ -61,7 +61,7 @@ export class GooRectangle implements OnChanges, OnInit {
     });
   }
 
-  onBoundsChanged(bounds) {
+  onBoundsChanged(bounds: any) {
     this.bounds = bounds;
     this.boundsChanged.emit(bounds);
   }

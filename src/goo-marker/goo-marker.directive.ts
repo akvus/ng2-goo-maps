@@ -62,7 +62,7 @@ export class GooMarker implements OnInit, OnChanges {
     });
   }
 
-  onPositionChange(position) {
+  onPositionChange(position: any) {
     this.position = position;
     this.positionChange.emit(this.position);
   }
