@@ -38,7 +38,6 @@ export class GooPolyline implements OnInit, OnChanges {
       this.setEditable(this.editable);
     }
     if (changes['path']) {
-      console.log('path changed', this.path);
       this.setPath(this.path);
     }
   }
@@ -53,7 +52,6 @@ export class GooPolyline implements OnInit, OnChanges {
   pathChangedCallback = () => {
     this.promisePolyline.then((polyline) => {
       let path = polyline.getPath().getArray();
-      console.log('path changed2', path);
       this.onChangePath(path);
     });
   }
