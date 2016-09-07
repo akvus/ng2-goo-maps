@@ -11,7 +11,8 @@
         "moduleResolution": "node"
     },
     "files": [
-        "ng2-goo-maps.ts"
+        "ng2-goo-maps.ts",
+        "typings/index.d.ts"
     ],
     "exclude": [
         "node_modules"
