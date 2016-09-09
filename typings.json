@@ -1,5 +1,6 @@
 {
   "globalDependencies": {
+    "google.maps": "registry:dt/google.maps#3.20.0+20160906005425",
     "node": "registry:dt/node#6.0.0+20160817204926"
   },
   "ambientDependencies": {

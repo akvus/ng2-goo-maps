@@ -7,7 +7,7 @@ const GOO_MAPS_ID = {
 
 @Component({
   selector: 'goo-map',
-  template: '<div id="{{mapId}}" [style.height]="mapHeight + \'px\'"></div><div id="map-content"><ng-content></ng-content></div>'
+  template: '<div class="goo-map {{styleClass}}" id="{{mapId}}" [style.height]="mapHeight + \'px\'"></div><div id="map-content"><ng-content></ng-content></div>'
 })
 export class GooMap implements OnInit, OnChanges {
 
@@ -17,6 +17,7 @@ export class GooMap implements OnInit, OnChanges {
   @Input('mapId') mapId: string = 'map_' + GOO_MAPS_ID.currentId++;
   @Input('bounds') bounds: any;
   @Input('center') center: any;
+  @Input('styleClass') styleClass: string;
 
   constructor(
     private gooMapsApi: GooMapsApiService) {

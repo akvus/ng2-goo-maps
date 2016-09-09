@@ -1,8 +1,8 @@
 {
   "resolution": "main",
   "tree": {
-    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/454545bd324b2d6354d6ff9091e27c0cf4cf6bff/googlemaps/google.maps.d.ts",
-    "raw": "registry:dt/google.maps#3.20.0+20160626235650",
-    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/454545bd324b2d6354d6ff9091e27c0cf4cf6bff/googlemaps/google.maps.d.ts"
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/34e18a172cb547b5e95a83d41c49fb90f0e13d82/googlemaps/google.maps.d.ts",
+    "raw": "registry:dt/google.maps#3.20.0+20160906005425",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/34e18a172cb547b5e95a83d41c49fb90f0e13d82/googlemaps/google.maps.d.ts"
   }
 }
