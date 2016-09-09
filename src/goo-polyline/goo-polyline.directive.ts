@@ -12,6 +12,7 @@ export class GooPolyline implements OnInit, OnChanges {
 
   @Input() options: PolylineOptions;
   @Input() editable: boolean;
+  @Input() strokeColor: string = '#FF0000';
 
   private promisePolyline: Promise<any>;
 
@@ -40,17 +41,20 @@ export class GooPolyline implements OnInit, OnChanges {
     if (changes['path']) {
       this.setPath(this.path);
     }
+    if (changes['strokeColor']) {
+      this.setStrokeColor(this.strokeColor);
+    }
   }
 
   ngOnInit() {
-    this.promisePolyline.then((polyline) => {
+    this.promisePolyline.then(polyline => {
       polyline.setPath(this.path);
       polyline.setOptions(this.options);
     });
   }
 
   pathChangedCallback = () => {
-    this.promisePolyline.then((polyline) => {
+    this.promisePolyline.then(polyline => {
       let path = polyline.getPath().getArray();
       this.onChangePath(path);
     });
@@ -62,14 +66,22 @@ export class GooPolyline implements OnInit, OnChanges {
   }
 
   setEditable(editable: boolean) {
-    this.promisePolyline.then((polyline) => {
+    this.promisePolyline.then(polyline => {
       polyline.setEditable(editable);
+    });
+  }
+
+  setStrokeColor(color: string) {
+    this.promisePolyline.then(polyline => {
+      polyline.setOptions({
+        strokeColor: color
+      });
     });
   }
 
   setPath(path: Array<LatLng>) {
     let self = this;
-    this.promisePolyline.then((polyline) => {
+    this.promisePolyline.then(polyline => {
       polyline.setPath(path);
       google.maps.event.addListener(polyline.getPath(), 'insert_at', self.pathChangedCallback);
       google.maps.event.addListener(polyline.getPath(), 'remove_at', self.pathChangedCallback);
