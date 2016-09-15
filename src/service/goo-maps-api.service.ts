@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {GoogleMapsLoader} from './goo-maps-loader.service';
 
+declare var google: any;
+
 @Injectable()
 export class GooMapsApiService {
   private zeroLatLng = { lat: 0, lng: 0 };
