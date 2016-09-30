@@ -1,10 +1,10 @@
-import {Directive, Input, OnChanges, SimpleChange, OnInit, Output, EventEmitter} from '@angular/core';
+import {Directive, Input, OnChanges, OnDestroy, SimpleChange, OnInit, Output, EventEmitter} from '@angular/core';
 import {GooMapsApiService} from '../service/goo-maps-api.service';
 
 @Directive({
   selector: 'goo-rectangle'
 })
-export class GooRectangle implements OnChanges, OnInit {
+export class GooRectangle implements OnChanges, OnInit, OnDestroy {
 
   @Input('bounds') bounds: any;
   @Output('boundsChanged') boundsChanged: EventEmitter<any> = new EventEmitter();
@@ -54,11 +54,15 @@ export class GooRectangle implements OnChanges, OnInit {
   }
 
   ngOnInit() {
-    this.promiseRectangle.then((rectangle) => {
+    this.promiseRectangle.then(rectangle => {
       rectangle.setBounds(this.bounds);
       rectangle.setDraggable(this.draggable);
       rectangle.setEditable(this.editable);
     });
+  }
+
+  ngOnDestroy() {
+    this.promiseRectangle.then(rectangle => rectangle.setMap(null));
   }
 
   onBoundsChanged(bounds: any) {

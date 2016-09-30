@@ -1,4 +1,4 @@
-import { Directive, OnInit, Input, ContentChild, OnChanges, SimpleChange, Output, EventEmitter } from '@angular/core';
+import { Directive, OnInit, OnDestroy, Input, ContentChild, OnChanges, SimpleChange, Output, EventEmitter } from '@angular/core';
 import {GooMapsApiService} from '../service/goo-maps-api.service';
 import {LatLng} from '../interface/definitions';
 import {GooInfoWindow} from '../goo-info-window/goo-info-window.component';
@@ -6,7 +6,7 @@ import {GooInfoWindow} from '../goo-info-window/goo-info-window.component';
 @Directive({
   selector: 'goo-marker'
 })
-export class GooMarker implements OnInit, OnChanges {
+export class GooMarker implements OnInit, OnChanges, OnDestroy {
 
   @Input() position: LatLng;
   @Output() positionChange: EventEmitter<any> = new EventEmitter();
@@ -53,13 +53,17 @@ export class GooMarker implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.promiseMarker.then((marker) => {
+    this.promiseMarker.then(marker => {
       marker.setPosition(this.position);
       marker.setTitle(this.title);
       if (this.infoWindow !== undefined && this.infoWindow) {
         this.infoWindow.setMarker(marker);
       }
     });
+  }
+
+  ngOnDestroy() {
+    this.promiseMarker.then(marker => marker.setMap(null));
   }
 
   onPositionChange(position: any) {

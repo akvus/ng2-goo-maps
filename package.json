@@ -1,6 +1,6 @@
 {
   "name": "ng2-goo-maps",
-  "version": "0.0.17",
+  "version": "0.0.19",
   "description": "Google Maps directives for Angular2",
   "main": "index.js",
   "scripts": {

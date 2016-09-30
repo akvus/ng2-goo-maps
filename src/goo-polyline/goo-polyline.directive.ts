@@ -1,11 +1,11 @@
-import { Directive, OnInit, Input, OnChanges, SimpleChange, EventEmitter, Output } from '@angular/core';
+import { Directive, OnInit, Input, OnDestroy, OnChanges, SimpleChange, EventEmitter, Output } from '@angular/core';
 import {GooMapsApiService} from '../service/goo-maps-api.service';
 import {LatLng, PolylineOptions} from '../interface/definitions';
 
 @Directive({
   selector: 'goo-polyline'
 })
-export class GooPolyline implements OnInit, OnChanges {
+export class GooPolyline implements OnInit, OnChanges, OnDestroy {
 
   @Input() path: Array<LatLng>;
   @Output() pathChange: EventEmitter<any> = new EventEmitter();
@@ -18,10 +18,10 @@ export class GooPolyline implements OnInit, OnChanges {
 
   constructor(private gooMapsApi: GooMapsApiService) {
     let self = this;
-    this.promisePolyline = new Promise((resolve) => {
+    this.promisePolyline = new Promise(resolve => {
       this.gooMapsApi.buildPolyline({
 
-      }).then((polyline) => {
+      }).then(polyline => {
         google.maps.event.addListener(polyline, 'rightclick', function (e: any) {
           if (e.vertex === undefined) {
             return;
@@ -51,6 +51,10 @@ export class GooPolyline implements OnInit, OnChanges {
       polyline.setPath(this.path);
       polyline.setOptions(this.options);
     });
+  }
+
+  ngOnDestroy() {
+    this.promisePolyline.then(polyline => polyline.setMap(null));
   }
 
   pathChangedCallback = () => {
