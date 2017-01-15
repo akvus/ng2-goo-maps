@@ -1,5 +1,7 @@
 # ng2-goo-maps
 
+Deprecated. Use https://github.com/SebastianM/angular2-google-maps instaed.
+
 Google Maps API directives for Angular2.
 
 ## Installation
